@@ -11,17 +11,17 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result {
-    public static int diagonalDifference(List<List<Integer>> arr) {
-        int n = arr.size();
-        int primaryDiagonalSum = 0;
-        int secondaryDiagonalSum = 0;
-
-        for (int i = 0; i < n; i++) {
-            primaryDiagonalSum += arr.get(i).get(i);
-            secondaryDiagonalSum += arr.get(i).get(n - i - 1);
+    public static void staircase(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("#");
+            }
+            
+            System.out.println();
         }
-
-        return Math.abs(primaryDiagonalSum - secondaryDiagonalSum);
     }
 }
 
